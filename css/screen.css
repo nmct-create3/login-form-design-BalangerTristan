@@ -19,9 +19,31 @@
     --global-color-alpha-light: #4F95FF;
     --global-color-alpha: #3385FF;
     --global-color-alpha-dark: #2E77E6;
-    --global-color-transparent: #...;
-    --global-color-x-transparent: x...;
-}
+    --global-color-transparent: rgb(51, 133, 255, 0.75);
+    --global-color-x-transparent: rgb(51, 133, 255, 0.3);
+
+    --global-color-neutral-xxxx-light: #F5F6FA;
+    --global-color-neutral-xxx-light: #E2E3E7; 
+    --global-color-neutral-xx-light: #CACCD4;
+    --global-color-neutral-x-light: #B5B6C0;
+    --global-color-neutral-light: #A0A1AD;
+    --global-color-neutral: #8B8C9A;
+    --global-color-neutral-dark: #757787;
+    --global-color-neutral-x-dark: #606274;
+    --global-color-neutral-xx-dark: #4B4C60;
+    --global-color-neutral-xxx-dark: #35374D;
+    --global-color-neutral-xxxx-dark: #20223A;
+
+    --global-baseline: 8px; 
+
+    --global-whitespace-xs: calc(var(--global-baseline) * 0.5); /* = 4px */
+    --global-whitespace-sm: var(--global-baseline); /* = 8px */
+    --global-whitespace-md: calc(var(--global-baseline) * 2); /* = 16px */
+    --global-whitespace: calc(var(--global-baseline) * 3); /* = 24px */
+    --global-whitespace-lg: calc(var(--global-baseline) * 4); /* = 32px */   
+    --global-whitespace-xl: calc(var(--global-whitespace) * 2); /* = 48px */    
+    --global-whitespace-xxl: calc(var(--global-whitespace-lg) * 2);   /* = 64px */ 
+    }
 
 /* CSS variables here */
 
@@ -39,11 +61,11 @@ html {
     font-size: 16px;
     line-height: 1.5;
     font-family: Helvetica, arial, sans-serif;
-    color: #20223a;
+    color: var(--global-color-neutral-xxxx-dark);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #F5F6FA;
+    background-color: var(--global-color-neutral-xxxx-light);
 }
 
 *,
@@ -160,7 +182,7 @@ figcaption {
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-    margin-top: 8px;
+    margin-top: var(--global-whitespace-sm);
 }
 
 hr {
@@ -213,19 +235,19 @@ input{
 /* size modifiers */
 
 .o-row--lg {
-    padding-top: 48px;
-    padding-bottom: 24px;
+    padding-top: var(--global-whitespace-xl);
+    padding-bottom: var(--global-whitespace);
 }
 
 .o-row--xl {
     padding-top: 72px;
-    padding-bottom: 48px;
+    padding-bottom: var(--global-whitespace-xl);
 }
 
 @media (min-width: 768px) {
     .o-row {
-        padding-left: 48px;
-        padding-right: 48px;
+        padding-left: var(--global-whitespace-xl);
+        padding-right: var(--global-whitespace-xl);
     }
 }
 
@@ -260,13 +282,13 @@ input{
 }
 
 .o-section + .o-section {
-    padding-top: 24px;
+    padding-top: var(--global-whitespace);
 }
 
 @media (min-width: 768px) {
     .o-section--lg + .o-section--lg,
     .o-section--xl + .o-section--xl {
-        padding-top: 48px;
+        padding-top: var(--global-whitespace-xl);
     }
 }
 
@@ -464,7 +486,7 @@ input{
     pass
 }
 .c-logo__path--1{
-    fill: #20223A;
+    fill: var(--global-color-neutral-xxxx-dark);
 }
 .c-logo__path--2{
     fill: var(--global-color-alpha);
@@ -486,7 +508,7 @@ input{
     box-shadow: 0 2 4px rgb(0, 0, 0, 0.07);
 }
 .c-card__body{
-    padding: 48px ;
+    padding: var(--global-whitespace-xl) ;
 }
 .c-card__title{
     display: flex;
@@ -496,7 +518,7 @@ input{
     line-height: 21px;
 }
 .c-card__footer{
-    border-top: 1px solid #E2E3E7;
+    border-top: 1px solid var(--global-color-neutral-xxx-light);
     padding: 18px;
     display: flex;
     justify-content: center;
@@ -523,11 +545,11 @@ input{
     width: 100%;
     border-width: 3px;
     font-family: inherit;
-    color: #20223A;
+    color: var(--global-color-neutral-xxxx-dark);
     font-size: 16px;
     line-height: 24px;
     padding: 12px 16px;
-    border: 1px solid #E2E3E7;
+    border: 1px solid var(--global-color-neutral-xxx-light);
     border-radius: 3px;
     outline: none;
 
@@ -548,12 +570,12 @@ input{
 .c-label {
     font-size: 14px;
     line-height: 16px;
-    margin-bottom: 8px;
-    color: #606274;
+    margin-bottom: var(--global-whitespace-sm);
+    color: var(--global-color-neutral-x-dark);
 }
 
 .c-label--option{
-    margin-left: 8px;
+    margin-left: var(--global-whitespace-sm);
     margin-bottom: 0px;
 }
 /* If a input is focused within the form-field class change te color of the label */
@@ -633,19 +655,19 @@ input{
 }
 
 .u-mb-xs {
-    margin-bottom: 4px !important;
+    margin-bottom: var(--global-whitespace-xs) !important;
 }
 
 .u-mb-sm {
-    margin-bottom: 8px !important;
+    margin-bottom: var(--global-whitespace-sm) !important;
 }
 
 .u-mb-md {
-    margin-bottom: 16px !important;
+    margin-bottom: var(--global-whitespace-md) !important;
 }
 
 .u-mb-lg {
-    margin-bottom: 32px !important;
+    margin-bottom: var(--global-whitespace-lg) !important;
 }
 
 .u-mb-xl {
